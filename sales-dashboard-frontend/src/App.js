@@ -16,14 +16,13 @@ import {
   CircularProgress,
   Box,
   Container,
-  Typography
 } from "@mui/material";
 
 function App() {
   const [category, setCategory] = useState("");
   const [search, setSearch] = useState("");
   const [minRating, setMinRating] = useState("");
-  const [products, setProducts] = useState([]);
+  const [_products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
