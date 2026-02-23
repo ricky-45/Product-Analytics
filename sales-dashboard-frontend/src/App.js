@@ -22,7 +22,6 @@ function App() {
   const [category, setCategory] = useState("");
   const [search, setSearch] = useState("");
   const [minRating, setMinRating] = useState("");
-  const [setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -31,9 +30,6 @@ function App() {
     axios
       .get("http://localhost:5000/api/products", {
         params: { category, search, minRating }
-      })
-      .then((res) => {
-        setProducts(res.data);
       })
       .catch((err) => console.error(err))
       .finally(() => setLoading(false));
